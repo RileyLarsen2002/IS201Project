@@ -1,0 +1,140 @@
+
+
+body {
+    background-color: #f0f8ff; /* Light blue background */
+    font-family: serif; /* Font family for the entire body */
+    color: #070707; /* Font color for text */
+    margin: 0;
+    padding: 0;
+    /* Adding a transparent image as background */
+    background-image: url('https://t3.ftcdn.net/jpg/08/05/05/52/360_F_805055299_DieN5lLIWkaxOdCeBHTqLiPSs5mx9oCs.jpg'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the entire body */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed when scrolling */
+}
+
+/* Anchor Link Styling */
+.anchor-link {
+    background-color: #439ef9; /* Blue background for the hyperlink */
+    color: white; /* White text color for the link */
+    padding: 5px 10px; /* Small padding around the link */
+    text-decoration: none; /* Removes underline from the link */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.anchor-link2 {
+    color: #0073e6; /* Blue color for the links */
+    text-decoration: none; /* Removes underline from links */
+    margin-top: 100px;
+}
+
+.anchor-link:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+
+.content {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* New Box for Image Placeholder */
+.image-box {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* New Box for YouTube Video */
+.video-box {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Image Placeholder Styling */
+.image-placeholder {
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Video Embed Styling */
+iframe {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px; /* Rounded corners for the video */
+}
+
+
+
+
+
+/* List Styling */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ol {
+    margin-left: 10px;
+}
+
+/* Heading Styling */
+h1, h2 {
+    font-family: 'Georgia', serif; /* Serif font for headings */
+    color: #22303d; /* Dark color for headings */
+    text-align: center; /* Center-align headings */
+}
+
+/* Hover Effects for List Items */
+ul li:hover, ol li:hover {
+    background-color: #e9f1f7; /* Light blue hover effect for list items */
+    padding-left: 10px; /* Indentation on hover */
+}
+
+.no-bullets {
+    list-style-type: none; /* Removes bullets from the list */
+    padding-left: 0; /* Optional: removes the default indentation from the list */
+}
+
+.headers {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-left: 500px;
+}
+
+.img-margin {
+    margin-top: 3px;  
+    margin-bottom: 8px;  
+}
+.white1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-left: 500px;
+    color: white;
+}
+
+.backing {
+    color: rgb(210, 210, 210);
+}

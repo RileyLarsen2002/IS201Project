@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switch Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005bb5;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Information Needed</h1>
+        <p id="prompt">Please type "My name is ____" in English:</p>
+        <input type="text" id="userInput" placeholder="Type here..." />
+        <button onclick="processInput()">Submit</button>
+        <p class="message" id="responseMessage"></p>
+    </div>
+
+    <script>
+        // Language data
+        const languages = [
+            { 
+                name: "English", 
+                phrase: "My name is ____", 
+                prompt: 'Please type "My name is ____" in English:',
+                sorry: "Sorry, I don't speak English. Please type in Spanish."
+            },
+            { 
+                name: "Spanish", 
+                phrase: "Mi nombre es ____", 
+                prompt: 'Por favor escribe "Mi nombre es ____" en español:',
+                sorry: "Lo siento, no hablo español. Por favor escribe en francés."
+            },
+            { 
+                name: "French", 
+                phrase: "Mon nom est ____", 
+                prompt: 'Veuillez écrire "Mon nom est ____" en français:',
+                sorry: "Désolé, je ne parle pas français. Veuillez écrire en portugais."
+            },
+            { 
+                name: "Portuguese", 
+                phrase: "Meu nome é ____", 
+                prompt: 'Por favor, digite "Meu nome é ____" em português:',
+                sorry: "Desculpe, eu não falo português. Por favor, digite em inglês."
+            }
+        ];
+
+        let currentLanguageIndex = 0;
+
+        function processInput() {
+            const inputField = document.getElementById("userInput");
+            const responseMessage = document.getElementById("responseMessage");
+            const prompt = document.getElementById("prompt");
+
+            // Get user input and current language
+            const userInput = inputField.value.trim();
+            const currentLanguage = languages[currentLanguageIndex];
+
+            // Check if the input matches the expected phrase for the current language
+            const expectedPhrase = currentLanguage.phrase.replace("____", "").trim();
+            if (userInput.toLowerCase().startsWith(expectedPhrase.toLowerCase())) {
+                // Move to the next language
+                const previousLanguage = currentLanguage.name;
+                currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
+                const nextLanguage = languages[currentLanguageIndex];
+
+                // Update the prompt and response message
+                prompt.textContent = nextLanguage.prompt;
+                responseMessage.textContent = currentLanguage.sorry;
+            } else {
+                // Invalid input message
+                responseMessage.textContent = `That doesn't seem right. ${currentLanguage.prompt}`;
+            }
+
+            // Clear the input field
+            inputField.value = "";
+        }
+    </script>
+</body>
+</html>
